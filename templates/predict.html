@@ -1,0 +1,49 @@
+{% extends "nav.html" %}
+{% block content %}
+{% load static %}
+
+<div class="Request-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="abouttitle">
+                    <h2>Prediction Result</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="Request">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8">
+
+                <h3>Input Values</h3>
+
+                <p><strong>SPX:</strong> {{ spx }}</p>
+                <p><strong>USO:</strong> {{ uso }}</p>
+                <p><strong>SLV:</strong> {{ slv }}</p>
+                <p><strong>EUR/USD:</strong> {{ eur }}</p>
+
+                <hr>
+
+                <h2>
+                    Predicted Gold Price:
+                    {{ price }}
+                </h2>
+
+                <br>
+
+                <a href="{% url 'data' %}" class="send-btn">
+                    Predict Again
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

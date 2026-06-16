@@ -1,0 +1,46 @@
+{% extends "nav.html" %}
+{% block content %}
+{% load static %}
+
+<div class="Request-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="abouttitle">
+                    <h2>Login</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="Request">
+    <div class="container">
+
+        <div class="titlepage3">
+            <h2>User Login</h2>
+        </div>
+
+        {% for message in messages %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+        {% endfor %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <input class="form-control" placeholder="Username" name="uname" type="text" required>
+
+            <input class="form-control" placeholder="Password" name="psw" type="password" required>
+
+            <button class="send-btn" type="submit">
+                Login
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

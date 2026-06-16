@@ -1,0 +1,151 @@
+{% extends "nav.html" %}
+{% block content %}
+{% load static %}
+
+<section class="slider_section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 text-center">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <img src="{% static 'images/gold.jpg' %}"
+                                 class="img-fluid rounded shadow"
+                                 alt="Gold">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="{% static 'images/gold1.jpg' %}"
+                                 class="img-fluid rounded shadow"
+                                 alt="Gold">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="{% static 'images/gold.jpg' %}"
+                                 class="img-fluid rounded shadow"
+                                 alt="Gold">
+                        </div>
+
+                    </div>
+
+                    <a class="carousel-control-prev"
+                       href="#myCarousel"
+                       role="button"
+                       data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+
+                    <a class="carousel-control-next"
+                       href="#myCarousel"
+                       role="button"
+                       data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <h1 class="main-heading">
+                    Gold Price Prediction
+                </h1>
+
+                <p class="lead-text">
+                    This web application predicts gold prices using Machine
+                    Learning. The prediction is based on important market
+                    indicators including SPX, USO, SLV and EUR/USD exchange rates.
+                </p>
+
+                <div class="button_section">
+
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'data' %}" class="main_bt">
+                            Exchange
+                        </a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="main_bt">
+                            Exchange
+                        </a>
+                    {% endif %}
+
+                    <a href="{% url 'contact' %}" class="main_bt">
+                        About Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="Currency py-5">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2>
+                Gold <strong class="cur">Price Prediction</strong>
+            </h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4 mb-4">
+                <div class="three-box text-center">
+
+                    <img src="{% static 'images/1.jpg' %}"
+                         class="img-fluid rounded mb-3">
+
+                    <h3>Machine Learning</h3>
+
+                    <p>
+                        Uses Random Forest Regression to estimate future
+                        gold prices accurately.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="three-box text-center">
+
+                    <img src="{% static 'images/2.jpg' %}"
+                         class="img-fluid rounded mb-3">
+
+                    <h3>Market Indicators</h3>
+
+                    <p>
+                        Uses SPX, USO, SLV and EUR/USD values as
+                        prediction factors.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="three-box text-center">
+
+                    <img src="{% static 'images/3.jpg' %}"
+                         class="img-fluid rounded mb-3">
+
+                    <h3>Prediction Results</h3>
+
+                    <p>
+                        Provides instant gold price predictions based
+                        on current market conditions.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
